@@ -8,7 +8,7 @@ export default {
     };
   },
   created: function () {
-    axios.get("http://localhost:3000/posts/1.json").then((response) => {
+    axios.get("http://localhost:3000/posts/" + this.$route.params.id + "json").then((response) => {
       console.log(response.data);
       this.post = response.data;
     });
@@ -18,6 +18,8 @@ export default {
 
 <template>
   <h1>Posts show</h1>
-  <p>{{ posts }}</p>
+  <h2>Title: {{ post.title }}</h2>
+  <img :src="post.image" v-bind:alt="post.title" />
+  <p>Post: {{ post.body }}</p>
   <a href="/posts">Back to all posts!</a>
 </template>

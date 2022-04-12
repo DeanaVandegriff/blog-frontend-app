@@ -23,7 +23,7 @@ export default {
       <h2>Title: {{ post.title }}</h2>
       <img :src="post.image" v-bind:alt="post.title" />
       <p>Post: {{ post.body }}</p>
-      <a href="/posts">More Info!</a>
+      <a v-bind:href="`/posts/${post.id}`">More Info!</a>
     </div>
   </div>
 </template>
