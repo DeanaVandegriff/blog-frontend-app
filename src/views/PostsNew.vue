@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newPostsParams: {},
+      newPostsParams: { body: "" },
       errors: [],
     };
   },
@@ -34,6 +34,7 @@ export default {
         <div class="post-group">
           body:
           <input type="text" v-model="newPostsParams.body" />
+          <small>{{ 120 - newPostsParams.body.length }} characters remaining</small>
         </div>
         <div class="post-group">
           image:
