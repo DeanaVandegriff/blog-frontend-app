@@ -5,6 +5,7 @@ export default {
     return {
       newPostsParams: { body: "" },
       errors: [],
+      status: "",
     };
   },
   methods: {
@@ -24,6 +25,7 @@ export default {
 
 <template>
   <div class="posts-new">
+    <img v-if="status" v-bind:src="`https://http.cat/${status}`" alt="" />
     <form v-on:submit.prevent="createPost()">
       <h1>Make a post!!</h1>
       <div>
